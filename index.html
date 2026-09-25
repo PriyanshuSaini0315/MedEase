@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediFlow — Billing your pharmacy can actually trust</title>
+<meta name="description" content="Batch-and-expiry inventory, GST-correct billing and party ledgers, built around how a pharmacy counter actually works." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=S~pace+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a href="index.html" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </span>
+        MediFlow
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#invoice">Billing</a>
+        <a href="#flow">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="signin.html" class="txt-link">Sign in</a>
+        <a href="signup.html" class="btn btn--solid">Get started</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" id="mobileMenu">
+      <a href="#invoice">Billing</a>
+      <a href="#flow">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="signin.html" class="txt-link">Sign in</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap" id="invoice">
+      <div class="hero__copy">
+        <h1>Billing your pharmacy can actually trust.</h1>
+        <p>
+          Every sale carries the right batch, the right expiry and the right GST split
+          automatically — so the invoice on the counter matches the stock on the shelf,
+          and the stock on the shelf matches your books.
+        </p>
+        <div class="hero__ctas">
+          <a href="signup.html" class="btn btn--solid btn--lg">Start free trial</a>
+          <a href="#invoice-demo" class="btn btn--line btn--lg">Try the invoice below ↓</a>
+        </div>
+        <dl class="hero__facts">
+          <div><dt>Avg. checkout time</dt><dd>11 sec</dd></div>
+          <div><dt>GST slabs handled</dt><dd>5%, 12%, 18%, 28%</dd></div>
+          <div><dt>Batches tracked live</dt><dd>Unlimited</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero__visual" id="invoice-demo">
+        <div class="slip" id="slip">
+          <div class="slip__perf" aria-hidden="true"></div>
+          <div class="slip__head">
+            <span class="slip__store">MEDIFLOW PHARMACY</span>
+            <span class="slip__gst">GSTIN 09AACMF1234F1Z5</span>
+          </div>
+          <div class="slip__meta">
+            <span>Invoice <strong id="invNo">RX-2031</strong></span>
+            <span id="invDate">14 Sep 2026</span>
+          </div>
+          <div class="slip__rule"></div>
+          <table class="slip__table" id="slipTable">
+            <tbody>
+              <tr data-row>
+                <td class="c-name">Paracetamol 500mg</td>
+                <td class="c-qty">×10</td>
+                <td class="c-amt">₹42.00</td>
+                <td class="c-rm"><button type="button" class="rm" aria-label="Remove Paracetamol 500mg">×</button></td>
+              </tr>
+              <tr data-row>
+                <td class="c-name">Azithromycin 500mg</td>
+                <td class="c-qty">×5</td>
+                <td class="c-amt">₹210.00</td>
+                <td class="c-rm"><button type="button" class="rm" aria-label="Remove Azithromycin 500mg">×</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="slip__empty" id="slipEmpty" hidden>Bill's empty — add an item below.</p>
+          <button class="slip__add" id="addItem" type="button">+ add another item</button>
+          <div class="slip__rule"></div>
+          <div class="slip__totals">
+            <div><span>Subtotal</span><span id="tSub">₹252.00</span></div>
+            <div><span>CGST + SGST</span><span id="tGst">₹25.20</span></div>
+            <div class="slip__grand"><span>Total</span><span id="tTotal">₹277.20</span></div>
+          </div>
+          <p class="slip__foot">Thank you — get well soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="flow wrap" id="flow">
+      <h2>How the counter runs on MediFlow</h2>
+      <ol class="flow__line">
+        <li>
+          <span class="flow__code">RX-01</span>
+          <h3>Stock arrives, batch attached</h3>
+          <p>Every purchase entry captures batch number and expiry, so nothing sits in inventory unaccounted for.</p>
+        </li>
+        <li>
+          <span class="flow__code">RX-02</span>
+          <h3>Oldest batch sells first</h3>
+          <p>
+            <button type="button" class="tip" data-tip="First-Expiry-First-Out: whichever batch expires soonest gets billed first, automatically.">FEFO</button>
+            picking happens automatically at the billing screen — the cashier never has to think about which strip to reach for.
+          </p>
+        </li>
+        <li>
+          <span class="flow__code">RX-03</span>
+          <h3>Tax is correct by construction</h3>
+          <p>HSN-linked GST slabs mean CGST, SGST and IGST are never typed in by hand or gotten wrong.</p>
+        </li>
+        <li>
+          <span class="flow__code">RX-04</span>
+          <h3>Books close themselves</h3>
+          <p>Sales, purchases and party outstanding roll into reports the moment the last invoice for the day is saved.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FEATURES (bento) -->
+    <section class="features wrap" id="features">
+      <h2>Built around a real pharmacy counter, not a generic ledger</h2>
+      <div class="bento">
+        <article class="bento__card bento__card--wide">
+          <span class="bento__tag">RX-05</span>
+          <h3>GST-correct billing, every time</h3>
+          <p>
+            Multi-slab GST,
+            <button type="button" class="tip" data-tip="Harmonised System of Nomenclature: the code that tells the tax system which GST rate a medicine falls under.">HSN codes</button>,
+            and automatic CGST/SGST vs IGST depending on the buyer's state. Print or generate a PDF invoice that a GST officer would recognise instantly.
+          </p>
+        </article>
+        <article class="bento__card">
+          <span class="bento__tag">RX-06</span>
+          <h3>Batch &amp; expiry tracking</h3>
+          <p>Near-expiry alerts at 30/60/90 days, and stock valuation that accounts for batch-wise purchase price.</p>
+        </article>
+        <article class="bento__card">
+          <span class="bento__tag">RX-07</span>
+          <h3>Party credit &amp; ledgers</h3>
+          <p>Customer and supplier outstanding, credit limits, and a running account history — no separate khata book.</p>
+        </article>
+        <article class="bento__card">
+          <span class="bento__tag">RX-08</span>
+          <h3>Role-based access</h3>
+          <p>Cashiers bill. Pharmacists manage stock. Only admins see reports and settings. Set once, per role.</p>
+        </article>
+        <article class="bento__card bento__card--wide">
+          <span class="bento__tag">RX-09</span>
+          <h3>Reports that file themselves</h3>
+          <p>Sales, purchase, GST summary, stock and profit reports, exportable to Excel — built for the return you actually have to file this month, not a generic dashboard.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing wrap" id="pricing">
+      <h2>One counter, one price</h2>
+      <p class="pricing__sub">Pick what fits how many counters you run. Switch any time.</p>
+
+      <div class="toggle" role="group" aria-label="Billing frequency">
+        <button class="toggle__btn is-active" data-freq="monthly" type="button">Monthly</button>
+        <button class="toggle__btn" data-freq="yearly" type="button">Yearly <span class="toggle__save">2 months free</span></button>
+      </div>
+
+      <div class="tickets">
+        <article class="ticket">
+          <div class="ticket__top">
+            <p class="ticket__name">Basic</p>
+            <p class="ticket__price"><span class="cur">₹</span><span data-m="499" data-y="4990">499</span><span class="per">/mo</span></p>
+            <p class="ticket__for">One counter, one biller</p>
+          </div>
+          <div class="ticket__perf" aria-hidden="true"></div>
+          <div class="ticket__bottom">
+            <ul>
+              <li>100 invoices / month</li>
+              <li>1 user</li>
+              <li>500 products</li>
+              <li>Billing + inventory</li>
+            </ul>
+            <a href="signup.html?plan=basic" class="btn btn--line btn--block">Choose Basic</a>
+          </div>
+        </article>
+
+        <article class="ticket ticket--popular">
+          <p class="ticket__stub">Most chosen by chemists</p>
+          <div class="ticket__top">
+            <p class="ticket__name">Professional</p>
+            <p class="ticket__price"><span class="cur">₹</span><span data-m="1499" data-y="14990">1,499</span><span class="per">/mo</span></p>
+            <p class="ticket__for">Retail shop with a second counter</p>
+          </div>
+          <div class="ticket__perf" aria-hidden="true"></div>
+          <div class="ticket__bottom">
+            <ul>
+              <li>1,000 invoices / month</li>
+              <li>5 users</li>
+              <li>5,000 products</li>
+              <li>Reports + export</li>
+            </ul>
+            <a href="signup.html?plan=professional" class="btn btn--solid btn--block">Choose Professional</a>
+          </div>
+        </article>
+
+        <article class="ticket">
+          <div class="ticket__top">
+            <p class="ticket__name">Enterprise</p>
+            <p class="ticket__price"><span class="cur">₹</span><span data-m="3999" data-y="39990">3,999</span><span class="per">/mo</span></p>
+            <p class="ticket__for">Wholesaler or hospital pharmacy</p>
+          </div>
+          <div class="ticket__perf" aria-hidden="true"></div>
+          <div class="ticket__bottom">
+            <ul>
+              <li>Unlimited invoices</li>
+              <li>Unlimited users</li>
+              <li>Unlimited products</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="signup.html?plan=enterprise" class="btn btn--line btn--block">Choose Enterprise</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TRIAL SIGNUP -->
+    <section class="trial wrap" id="trial">
+      <div class="trial__box">
+        <div class="trial__copy">
+          <h2>Ready to bill your first sale?</h2>
+          <p>Create your account and we'll set your shop up on a free trial, no card needed — you can be billing your first customer in minutes.</p>
+          <a href="signup.html" class="btn btn--solid btn--lg" style="margin-top: 22px;">Create your account</a>
+        </div>
+        <div class="trial__copy">
+          <p style="margin-top:0; font-size: 13.8px; color: var(--ink-faint);">Already set up your shop?</p>
+          <a href="signin.html" class="btn btn--line btn--lg btn--block" style="margin-top: 10px;">Sign in instead</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq wrap" id="faq">
+      <h2>Questions chemists actually ask</h2>
+      <div class="faq__list">
+        <details class="faq__item" open>
+          <summary>Do I need to change my current invoice numbering?</summary>
+          <p>No. Tell us your last invoice number when you sign up and MediFlow continues counting from there, so your GST filing stays continuous.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Can I bring in my existing stock and prices?</summary>
+          <p>Yes — send us your current stock sheet (Excel or even a photo of your register) and we load it in during setup, batch numbers and expiry included.</p>
+        </details>
+        <details class="faq__item">
+          <summary>What happens if the internet drops mid-sale?</summary>
+          <p>Billing keeps working offline on the same device and syncs the moment the connection is back. No sale is ever lost.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Is my shop's data visible to anyone else?</summary>
+          <p>No. Every shop's stock, invoices and party ledgers are isolated from every other shop on MediFlow — nobody else can see your numbers.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Can one account cover more than one counter or branch?</summary>
+          <p>Yes, on the Professional and Enterprise plans. Each counter gets its own biller login, and stock can be tracked per branch or shared across all of them.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta" id="stickyCta">
+    <span>Ready to switch your counter over?</span>
+    <a href="signup.html" class="btn btn--solid">Start free trial</a>
+  </div>
+
+  <footer class="footer wrap">
+    <a href="index.html" class="brand brand--sm">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      MediFlow
+    </a>
+    <p>© <span id="year"></span> MediFlow. GST-compliant billing for Indian pharmacies.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
