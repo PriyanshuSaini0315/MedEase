@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Invoice — MediFlow</title>
+<meta name="description" content="Create a GST tax invoice in your MediFlow workspace." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+  <div class="app">
+    <div class="sideveil" id="sideveil"></div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="side" id="side">
+      <div class="side__head">
+        <a href="index.html" class="side__brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          </span>
+          MediFlow
+        </a>
+        <button type="button" class="side__close" id="sideClose" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="side__nav">
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          Dashboard
+        </a>
+
+        <div class="side__group is-open" data-group>
+          <button type="button" class="side__group-btn">
+            <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            Billing
+            <svg class="side__chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="side__sub">
+            <a href="app.html" class="side__link is-active">
+              <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 12h6M12 9v6"/></svg>
+              Create Invoice
+            </a>
+            <a href="invoices.html" class="side__link">
+              <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+              Invoice List
+            </a>
+          </div>
+        </div>
+
+        <div class="side__group" data-group>
+          <button type="button" class="side__group-btn">
+            <svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>
+            Inventory
+            <svg class="side__chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="side__sub">
+            <a href="#" class="side__link">Stock List</a>
+            <a href="#" class="side__link">Near Expiry</a>
+          </div>
+        </div>
+
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.55L21 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+          Purchases
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0112 0M16.5 11a3 3 0 100-6M18 20a5.5 5.5 0 00-2-4.3"/></svg>
+          Parties
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>
+          Reports
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 007.5 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.6 1.6 0 003 15V15a2 2 0 010-4h.1A1.6 1.6 0 004.6 7.5l-.1-.1a2 2 0 112.8-2.8l.1.1A1.6 1.6 0 0010 3.1V3a2 2 0 014 0v.1a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1A1.6 1.6 0 0021 10h.1a2 2 0 010 4H21a1.6 1.6 0 00-1.6 1z"/></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="side__foot">
+        <p class="side__shop" id="sideShop">Retailer Medical Store</p>
+        <div class="side__user">
+          <span class="side__avatar" id="sideAvatar">R</span>
+          <div>
+            <p class="side__email" id="sideEmail">retailer@gmail.com</p>
+            <span class="side__role">OWNER</span>
+          </div>
+        </div>
+        <button type="button" class="side__signout" id="signOut">
+          <svg viewBox="0 0 24 24"><path d="M10 20H6a2 2 0 01-2-2V6a2 2 0 012-2h4M16 16l4-4-4-4M20 12H10"/></svg>
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <div class="appmain">
+      <header class="topbar">
+        <button type="button" class="sidetoggle" id="sidetoggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <p class="topbar__title">Create Invoice</p>
+        <p class="topbar__shop" id="topShop">Retailer Medical Store</p>
+        <div class="topbar__user">
+          <span class="topbar__avatar" id="topAvatar">R</span>
+          <span id="topEmail">retailer@gmail.com</span>
+        </div>
+      </header>
+
+      <div class="workarea">
+        <div class="workarea__head">
+          <h1>Create Invoice</h1>
+          <div class="workarea__actions">
+            <button type="button" class="btn btn--dark btn--sm" id="confirmPrint">Confirm &amp; Print</button>
+          </div>
+        </div>
+
+        <div class="sheet">
+          <!-- header band -->
+          <div class="sheet__top">
+            <div>
+              <div class="sheet__logo">
+                <span class="brand__mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                </span>
+                MEDIFLOW
+              </div>
+              <p class="sheet__store" id="sheetStore">RETAILER MEDICAL STORE</p>
+              <p class="sheet__addr">
+                Sanoli Road, Near Ahuja Hospital, Panipat, Haryana (132103)<br />
+                <strong>GSTIN :</strong> 06AFTPM4854Q1ZF<br />
+                <strong>Website :</strong> https://mediflow.app<br />
+                <strong>Email :</strong> <span id="sheetEmail">retailer@gmail.com</span>
+              </p>
+            </div>
+
+            <div>
+              <p class="sheet__title">TAX INVOICE - CREDIT</p>
+              <dl class="sheet__kv">
+                <dt>Invoice No</dt><dd>:</dd><dd class="auto">auto-generated</dd>
+                <dt>Invoice Date</dt><dd>:</dd><dd id="invDate">—</dd>
+                <dt>LR/GR/RR No</dt><dd>:</dd><dd></dd>
+                <dt>LR/GR/RR Date</dt><dd>:</dd><dd id="lrDate">—</dd>
+                <dt>P.O.Number</dt><dd>:</dd><dd></dd>
+                <dt class="strong-row">DUE DATE</dt><dd>:</dd><dd id="dueDate">—</dd>
+                <dt>Transport</dt><dd>:</dd><dd></dd>
+                <dt>E-Way Bill No</dt><dd>:</dd><dd></dd>
+              </dl>
+            </div>
+
+            <div class="sheet__party">
+              <label for="partyName">Party Name</label>
+              <input type="text" id="partyName" placeholder="Search party..." />
+              <div class="ewb">
+                <label for="ewayNo">E-Way Bill No :</label>
+                <input type="text" id="ewayNo" />
+              </div>
+            </div>
+          </div>
+
+          <!-- line items -->
+          <div class="sheet__scroll">
+            <table class="lines" id="lines">
+              <thead>
+                <tr>
+                  <th>S.R</th>
+                  <th>Product Name</th>
+                  <th>HSN Code</th>
+                  <th>Pack</th>
+                  <th>Qty</th>
+                  <th>Free</th>
+                  <th>Batch Number</th>
+                  <th>Mfg M-Year</th>
+                  <th>Expiry M-Year</th>
+                  <th>MRP Rs.Ps</th>
+                  <th>Disc %</th>
+                  <th>Disc Rs.Ps</th>
+                  <th>Price Rs.Ps</th>
+                  <th>GST %</th>
+                  <th>GST Rs.Ps</th>
+                  <th>Taxable Amount</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="linesBody"></tbody>
+            </table>
+          </div>
+
+          <div class="sheet__addrow">
+            <button type="button" id="addRow">+ Add Row</button>
+          </div>
+
+          <!-- summary band -->
+          <div class="sheet__mid">
+            <table class="classes">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Total Sales Amt</th>
+                  <th>Scheme Disc.%</th>
+                  <th>Scheme Disc.</th>
+                  <th>Cash Disc %</th>
+                  <th>Cash Disc.</th>
+                  <th>Taxable Amount</th>
+                </tr>
+              </thead>
+              <tbody id="classBody">
+                <tr data-slab="5"><td>GST 5%</td><td data-sales>0.00</td><td>—</td><td>0.00</td><td>—</td><td data-disc>0.00</td><td data-taxable>0.00</td></tr>
+                <tr data-slab="12"><td>GST 12%</td><td data-sales>0.00</td><td>—</td><td>0.00</td><td>—</td><td data-disc>0.00</td><td data-taxable>0.00</td></tr>
+                <tr data-slab="18"><td>GST 18%</td><td data-sales>0.00</td><td>—</td><td>0.00</td><td>—</td><td data-disc>0.00</td><td data-taxable>0.00</td></tr>
+                <tr data-slab="28"><td>GST 28%</td><td data-sales>0.00</td><td>—</td><td>0.00</td><td>—</td><td data-disc>0.00</td><td data-taxable>0.00</td></tr>
+              </tbody>
+            </table>
+
+            <div class="qtybox">
+              <div><span>QTY BILLED :</span><span id="qtyBilled">0 Pcs.</span></div>
+              <div><span>QTY FREE :</span><span id="qtyFree">0 Pcs.</span></div>
+            </div>
+
+            <div class="totalsbox">
+              <div><span>TOTAL SALES AMOUNT :</span><span id="tSales">0.00</span></div>
+              <div><span>TOTAL DISCOUNT :</span><span id="tDisc">0.00</span></div>
+              <div><span>IGST PAYABLE :</span><span id="tIgst">0.00</span></div>
+              <div><span>CGST PAYABLE :</span><span id="tCgst">0.00</span></div>
+              <div><span>SGST PAYABLE :</span><span id="tSgst">0.00</span></div>
+              <div><span>Rounded Off (+) :</span><span id="tRound">0.00</span></div>
+              <div class="grand"><span>GRAND TOTAL (₹) :</span><span id="tGrand">0.00</span></div>
+            </div>
+          </div>
+
+          <!-- footer band -->
+          <div class="sheet__bottom">
+            <div class="bank">
+              <h4>Our Bank Details</h4>
+              <dl class="bank__kv">
+                <dt>BANK NAME</dt><dd>:</dd><dd>STATE BANK OF INDIA</dd>
+                <dt>BRANCH NAME</dt><dd>:</dd><dd>Sector 12 Panipat</dd>
+                <dt>ACCOUNT NO</dt><dd>:</dd><dd>0000004211593xxxx</dd>
+                <dt>IFSC CODE</dt><dd>:</dd><dd>SBIN00169xx</dd>
+                <dt>UPI ID</dt><dd>:</dd><dd>mediflow@okbank</dd>
+              </dl>
+            </div>
+
+            <div class="qr">
+              <div class="qr__code" aria-hidden="true"></div>
+              <small>Scan to Pay</small>
+            </div>
+
+            <div class="sign">
+              <h4 id="signFor">For Retailer Medical Store</h4>
+              <div class="sign__stamp">APPROVED</div>
+              <p class="sign__line">Authorised Signatory</p>
+            </div>
+
+            <div class="grandbox">
+              <h4>Amount Grand Total</h4>
+              <p class="amt">₹ <span id="tGrand2">0.00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

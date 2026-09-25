@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create your account — MediFlow</title>
+<meta name="description" content="Get started with MediFlow — free during your trial." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <main id="main" class="authpage">
+    <a href="index.html" class="authlogo">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      MediFlow
+    </a>
+
+    <div class="authcard">
+      <h1>Create your account</h1>
+      <p class="authcard__sub">Get started with MediFlow — free during your trial.</p>
+
+      <form class="authform" id="signupForm" novalidate>
+        <div class="field">
+          <label for="businessName">Business name</label>
+          <input type="text" id="businessName" name="businessName" autocomplete="organization" placeholder="Sunrise Medical Stores" required />
+          <p class="field__err" id="err-businessName"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="owner@pharmacy.com" required />
+          <p class="field__err" id="err-email"></p>
+        </div>
+
+        <div class="field">
+          <label for="businessType">Business type</label>
+          <select id="businessType" name="businessType">
+            <option value="retail">Retail Medical Shop</option>
+            <option value="wholesale">Wholesale / Distributor</option>
+            <option value="hospital">Hospital Pharmacy</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="stateCode">State code</label>
+          <input type="text" id="stateCode" name="stateCode" placeholder="MH" maxlength="2" required />
+          <p class="field__err" id="err-stateCode"></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" required />
+          <p class="field__err" id="err-password"></p>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required />
+          <p class="field__err" id="err-confirmPassword"></p>
+        </div>
+
+        <input type="hidden" id="plan" value="professional" />
+
+        <button type="submit" class="btn btn--solid btn--block" id="signupSubmit">Create account</button>
+      </form>
+
+      <p class="authcard__switch">Already have an account? <a href="signin.html">Sign in</a></p>
+    </div>
+
+    <p class="authlegal">By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+  </main>
+
+  <script src="signup.js"></script>
+</body>
+</html>

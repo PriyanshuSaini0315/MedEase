@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Invoice List — MediFlow</title>
+<meta name="description" content="All invoices raised from your MediFlow workspace." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+  <div class="app">
+    <div class="sideveil" id="sideveil"></div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="side" id="side">
+      <div class="side__head">
+        <a href="index.html" class="side__brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          </span>
+          MediFlow
+        </a>
+        <button type="button" class="side__close" id="sideClose" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="side__nav">
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          Dashboard
+        </a>
+
+        <div class="side__group is-open" data-group>
+          <button type="button" class="side__group-btn">
+            <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            Billing
+            <svg class="side__chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="side__sub">
+            <a href="app.html" class="side__link">
+              <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 12h6M12 9v6"/></svg>
+              Create Invoice
+            </a>
+            <a href="invoices.html" class="side__link is-active">
+              <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+              Invoice List
+            </a>
+          </div>
+        </div>
+
+        <div class="side__group" data-group>
+          <button type="button" class="side__group-btn">
+            <svg viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>
+            Inventory
+            <svg class="side__chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="side__sub">
+            <a href="#" class="side__link">Stock List</a>
+            <a href="#" class="side__link">Near Expiry</a>
+          </div>
+        </div>
+
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.7a2 2 0 002-1.55L21 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+          Purchases
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0112 0M16.5 11a3 3 0 100-6M18 20a5.5 5.5 0 00-2-4.3"/></svg>
+          Parties
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg>
+          Reports
+        </a>
+        <a href="#" class="side__link">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 007.5 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.6 1.6 0 003 15V15a2 2 0 010-4h.1A1.6 1.6 0 004.6 7.5l-.1-.1a2 2 0 112.8-2.8l.1.1A1.6 1.6 0 0010 3.1V3a2 2 0 014 0v.1a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1A1.6 1.6 0 0021 10h.1a2 2 0 010 4H21a1.6 1.6 0 00-1.6 1z"/></svg>
+          Settings
+        </a>
+      </nav>
+
+      <div class="side__foot">
+        <p class="side__shop" id="sideShop">Retailer Medical Store</p>
+        <div class="side__user">
+          <span class="side__avatar" id="sideAvatar">R</span>
+          <div>
+            <p class="side__email" id="sideEmail">retailer@gmail.com</p>
+            <span class="side__role">OWNER</span>
+          </div>
+        </div>
+        <button type="button" class="side__signout" id="signOut">
+          <svg viewBox="0 0 24 24"><path d="M10 20H6a2 2 0 01-2-2V6a2 2 0 012-2h4M16 16l4-4-4-4M20 12H10"/></svg>
+          Sign out
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <div class="appmain">
+      <header class="topbar">
+        <button type="button" class="sidetoggle" id="sidetoggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <p class="topbar__title">Invoice List</p>
+        <p class="topbar__shop" id="topShop">Retailer Medical Store</p>
+        <div class="topbar__user">
+          <span class="topbar__avatar" id="topAvatar">R</span>
+          <span id="topEmail">retailer@gmail.com</span>
+        </div>
+      </header>
+
+      <div class="workarea">
+        <div class="listhead">
+          <h1 style="font-size:18px;font-weight:700;">Invoice List</h1>
+          <a href="app.html" class="btn btn--dark btn--sm">+ New Invoice</a>
+        </div>
+
+        <div class="listhead__filters">
+          <div class="listhead__search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="search" placeholder="Search invoice no. or party..." />
+          </div>
+          <select class="listhead__select" id="statusFilter">
+            <option value="all">All statuses</option>
+            <option value="paid">Paid</option>
+            <option value="due">Due</option>
+            <option value="overdue">Overdue</option>
+          </select>
+        </div>
+
+        <div class="summary-row">
+          <div class="stat">
+            <p class="stat__label">Invoices this month</p>
+            <p class="stat__value" id="statCount">0</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Total billed</p>
+            <p class="stat__value" id="statBilled">₹0</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Collected</p>
+            <p class="stat__value" id="statPaid">₹0</p>
+          </div>
+          <div class="stat stat--due">
+            <p class="stat__label">Outstanding</p>
+            <p class="stat__value" id="statDue">₹0</p>
+          </div>
+        </div>
+
+        <div class="listtable-wrap">
+          <table class="listtable">
+            <thead>
+              <tr>
+                <th>Invoice No</th>
+                <th>Date</th>
+                <th>Party</th>
+                <th>Items</th>
+                <th class="num">Amount</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="listBody"></tbody>
+          </table>
+          <p class="listempty" id="listEmpty" hidden>No invoices match your search.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="invoices.js"></script>
+</body>
+</html>

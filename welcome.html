@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're set up — MediFlow</title>
+<meta name="description" content="Your MediFlow account is ready. Here's what to do first." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a href="index.html" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </span>
+        MediFlow
+      </a>
+      <div class="nav__actions">
+        <span class="txt-link" style="color: var(--ink-faint);" id="shopBadge"></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="welcome wrap">
+      <div class="receipt">
+        <div class="receipt__perf" aria-hidden="true"></div>
+        <span class="receipt__stamp" id="receiptStamp">CONFIRMED</span>
+
+        <div class="receipt__head">
+          <span class="receipt__eyebrow" id="receiptEyebrow">RX-11 · ACCOUNT ACTIVE</span>
+          <h1 id="welcomeHeading">You're all set up.</h1>
+          <p id="welcomeBody">Your shop's account has been created. Here's what to do first.</p>
+        </div>
+
+        <div class="receipt__meta" id="receiptMeta">
+          <div><span>Shop</span><span id="metaShop">—</span></div>
+          <div><span>Owner</span><span id="metaOwner">—</span></div>
+          <div><span>Plan</span><span id="metaPlan">—</span></div>
+        </div>
+
+        <div class="receipt__checklist">
+          <h2>First three things to do</h2>
+          <ol>
+            <li>
+              <span class="receipt__num">1</span>
+              <div>
+                <strong>Add your stock</strong>
+                <small>Import your existing sheet or add products one at a time, with batch and expiry.</small>
+              </div>
+            </li>
+            <li>
+              <span class="receipt__num">2</span>
+              <div>
+                <strong>Bill your first sale</strong>
+                <small>Try the invoice screen — GST is worked out for you automatically.</small>
+              </div>
+            </li>
+            <li>
+              <span class="receipt__num">3</span>
+              <div>
+                <strong>Invite your team</strong>
+                <small>Give your cashier or pharmacist their own role-based login.</small>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="receipt__ctas">
+          <a href="app.html" class="btn btn--solid btn--lg" id="openWorkspace">Open your workspace</a>
+          <a href="index.html" class="btn btn--line btn--lg">Back to home</a>
+        </div>
+
+        <p class="receipt__foot">Thank you — get well soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a href="index.html" class="brand brand--sm">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      MediFlow
+    </a>
+    <p>© <span id="year"></span> MediFlow. GST-compliant billing for Indian pharmacies.</p>
+  </footer>
+
+  <script src="welcome.js"></script>
+</body>
+</html>
