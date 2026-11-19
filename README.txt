@@ -1,7 +1,7 @@
-MediFlow — pharmacy billing website (static, no backend)
+MedEase — pharmacy billing website (static, no backend)
 
 HOW TO RUN
-  1. Unzip, open the folder "mediflow-site" in VS Code (File > Open Folder).
+  1. Unzip, open the folder "medease-site" in VS Code (File > Open Folder).
   2. Right-click index.html > "Open with Live Server".
      (or just double-click index.html, or run: python3 -m http.server 8000)
 
