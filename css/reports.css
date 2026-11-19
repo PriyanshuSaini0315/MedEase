@@ -1,0 +1,72 @@
+/* =============================================================
+   MediFlow — Reports (extras on top of app.css list styles)
+   ============================================================= */
+.rp-head h1 { font-size: 18px; font-weight: 700; margin: 0; }
+.rp-head p { margin: 4px 0 0; font-size: 13px; color: #6b7a75; }
+
+.rp-tabs {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  margin-top: 16px; padding: 6px;
+  background: #f1f5f3; border: 1px solid #dfe7e3; border-radius: 12px;
+}
+.rp-tab {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 12px; border: 0; border-radius: 8px; cursor: pointer;
+  background: transparent; color: #55655f; font: inherit; font-size: 13px; font-weight: 600;
+}
+.rp-tab svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.rp-tab:hover { background: #e6eeea; }
+.rp-tab.is-active { background: #0e6b4b; color: #fff; }
+
+.rp-filters {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-top: 14px; padding: 12px 14px;
+  background: #fff; border: 1px solid #dfe7e3; border-radius: 12px;
+}
+.rp-filters svg.ico { width: 16px; height: 16px; fill: none; stroke: #6b7a75; stroke-width: 1.8; }
+.rp-field {
+  display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #55655f;
+}
+.rp-filters input, .rp-filters select {
+  height: 36px; padding: 0 10px; font: inherit; font-size: 13px;
+  border: 1px solid #dfe7e3; border-radius: 8px; background: #fff; color: inherit;
+}
+.rp-filters input[type="text"] { min-width: 180px; }
+.rp-filters .grow { flex: 1; }
+
+.rp-bar-actions { display: flex; justify-content: flex-end; margin-top: 14px; }
+
+.rp-card {
+  margin-top: 14px; padding: 18px 20px;
+  background: #fff; border: 1px solid #dfe7e3; border-radius: 12px;
+}
+.rp-card h2 { font-size: 14.5px; font-weight: 700; margin: 0 0 14px; }
+.rp-empty { display: grid; place-items: center; min-height: 160px; color: #6b7a75; font-size: 13.5px; }
+
+/* horizontal bars */
+.hb { display: grid; gap: 10px; }
+.hb__row { display: grid; grid-template-columns: 150px 1fr 110px; align-items: center; gap: 12px; font-size: 13px; }
+.hb__lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hb__track { height: 12px; background: #eef3f0; border-radius: 99px; overflow: hidden; }
+.hb__track i { display: block; height: 100%; background: #0e6b4b; border-radius: 99px; }
+.hb__val { text-align: right; font-weight: 600; }
+
+/* vertical bars (forecast) */
+.vb { display: flex; align-items: flex-end; gap: 6px; height: 220px; }
+.vb__col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px; min-width: 0; }
+.vb__bar { width: 100%; max-width: 30px; min-height: 3px; background: #0e6b4b; border-radius: 5px 5px 0 0; }
+.vb__bar.is-fc { background: repeating-linear-gradient(45deg, #7fc3a6, #7fc3a6 4px, #a9d9c4 4px, #a9d9c4 8px); }
+.vb__lbl { font-size: 10px; color: #6b7a75; white-space: nowrap; }
+.rp-legend { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: #55655f; }
+.rp-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #0e6b4b; margin-right: 6px; }
+.rp-legend i.fc { background: #7fc3a6; }
+.rp-note { font-size: 12px; color: #6b7a75; margin: 12px 0 0; }
+
+.listtable tr.total td { font-weight: 700; background: #f6f9f8; }
+.pos { color: #0e6b4b; font-weight: 600; }
+.neg { color: #b4401a; font-weight: 600; }
+
+@media (max-width: 760px) {
+  .rp-tabs { grid-template-columns: 1fr 1fr; }
+  .hb__row { grid-template-columns: 90px 1fr 80px; }
+}
